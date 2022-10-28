@@ -1,6 +1,6 @@
-from datetime import datetime
+from email.policy import default
 from django.db import models
-#from datetime import datetime
+from datetime import datetime
 
 # Create your models here.
 
@@ -15,7 +15,7 @@ class Artiste(models.Model):
 class Song(models.Model):
     artiste_id = models.ForeignKey(Artiste, on_delete=models.CASCADE)
     title = models.CharField(max_length=40)
-    date_released = models.DateField()
+    date_released = models.DateField(default=datetime.today)
     likes = models.IntegerField()
     
 
