@@ -1,16 +1,12 @@
-from rest_framework import viewsets
-from .models import Artiste, Lyric, Song
-from .serializers import ArtisteSerializer, LyricSerializer, SongSerializer
+from rest_framework import generics
 
+from .models import Song, Artiste
+from .serializers import SongSerializer, ArtisteSerializer
 
-class ArtisteViewset(viewsets.ModelViewSet):
-    queryset = Artiste.objects.all()
-    serializer_class = ArtisteSerializer
+class SongList(generics.ListCreateAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
 
-class LyricViewset(viewsets.ModelViewSet):
-    queryset = Lyric.objects.all()
-    serializer_class = LyricSerializer
-
-class SongViewset(viewsets.ModelViewSet):
-    queryset = SongSerializer.objects.all()
-    serializer_class = SongSerializer     
+class SongDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
