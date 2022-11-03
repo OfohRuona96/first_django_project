@@ -1,19 +1,10 @@
 from django.urls import path
-from rest_framework.routers import DefaultRouter
-from .views import ArtisteViewset, LyricViewset, SongViewset
 
-router = DefaultRouter()
-router.register(r'artistes', ArtisteViewset, basename='artistes')
+from .views import SongList, SongDetail, ArtisteList, ArtisteDetail
 
-router = DefaultRouter()
-router.register(r'lyrics', LyricViewset, basename='lyrics')
-
-router = DefaultRouter()
-router.register(r'songs', SongViewset, basename='songs')
-
-urlpatterns = [] + router.urls
-
-#127.0.0.1:8007/artistes
-#127.0.0.1:8007/lyrics
-#127.0.0.1:8007/songs
-
+urlpatterns = [
+    path("<int:pk>/", SongDetail.as_view(), name="song_detail"),
+    path("", SongList.as_view(), name="song_list"),
+    path("<int:pk>/", ArtisteDetail.as_view(), name="artiste_detail"),
+    path("", ArtisteList.as_view(), name="artiste_list"),
+] 
