@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework.generics import viewsets
 from .models import Artiste, Lyric, Song
 from .serializers import ArtisteSerializer, LyricSerializer, SongSerializer
 
