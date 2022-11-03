@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     #myapps
     'musicapp',
     #thirdparty apps
-    'rest_framework'
+    'rest_framework',
 
 ]
 
