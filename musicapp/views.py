@@ -10,3 +10,11 @@ class SongList(generics.ListCreateAPIView):
 class SongDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
+
+class ArtisteList(generics.ListCreateAPIView):
+    queryset = Artiste.objects.all()
+    serializer_class = ArtisteSerializer
+
+class ArtisteDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Artiste.objects.all()
+    serializer_class = ArtisteSerializer

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #myapps
     'musicapp',
+    #thirdparty
     'rest_framework',
     
 
